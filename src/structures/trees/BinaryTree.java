@@ -2,43 +2,41 @@ package structures.trees;
 
 import structures.node.Node;
 
-public class IntTree {
-    
-    private Node<Integer> root; 
+public class BinaryTree<T extends Comparable <T>> {
+    private Node<T> root;  
     private int weight; 
 
     // CONSTRUCTOR
-    public IntTree(){
-        this.root = null;
-        this.weight = 0;  
+    public BinaryTree(Node<T> root, int peso) {
+        this.root = root;
+        this.weight = peso;
     }
 
-
-    public Node<Integer> getRoot() {
+    public Node<T> getRoot() {
         return root;
     }
 
-    public void setRoot(Node<Integer> root) {
+    public void setRoot(Node<T> root) {
         this.root = root;
     }
 
-    // public void serRoot (Integer value){
-    //     Node<Integer> node = new Node<Integer> (value);
+    // public void serRoot (T value){
+    //     Node<T> node = new Node<T> (value);
     //     this.root = node; 
     // }
 
-    public void add(int value){
-        Node<Integer> node = new Node<Integer> (value);
-        root = addRecursivo(root, node); 
-        weight ++; 
+    public void add(T value){
+        Node<T> node = new Node<T> (value);
+        root = addRecursivo(root, node);
+        weight ++;  
     }
 
-    private Node<Integer> addRecursivo(Node<Integer> actual, Node<Integer> nodeInsertar){
+    private Node<T> addRecursivo(Node<T> actual, Node<T> nodeInsertar){
         if (actual == null){
             return nodeInsertar;
         }
 
-        if(actual.getValue() > nodeInsertar.getValue()){
+        if(actual.getValue().compareTo(nodeInsertar.getValue()) >0 ){
             // IZQUIERDA
             actual.setLeft(addRecursivo(actual.getLeft(), nodeInsertar)); 
         }else{
@@ -52,7 +50,7 @@ public class IntTree {
         preOrdenRecursivo(root);
     }
 
-    private void preOrdenRecursivo(Node<Integer> actual){
+    private void preOrdenRecursivo(Node<T> actual){
 
         // RAIZ - IZQUIERDA - DERECHA
         if(actual == null ){
@@ -68,7 +66,7 @@ public class IntTree {
         posOrdenRecursivo(root);
     }
 
-    private void posOrdenRecursivo(Node<Integer> actual){
+    private void posOrdenRecursivo(Node<T> actual){
 
         // IZQUIERDA - DERECHA - RAIZ
         if(actual == null ){
@@ -85,7 +83,7 @@ public class IntTree {
         inOrdenRecursivo(root);
     }
 
-    private void inOrdenRecursivo(Node<Integer> actual){
+    private void inOrdenRecursivo(Node<T> actual){
 
         // IZQUIERDA - RAIZ - DERECHA
         if(actual == null ){
@@ -101,7 +99,7 @@ public class IntTree {
         return getHeingthRecursivo(root);
     }
 
-    private int getHeingthRecursivo(Node<Integer> actual){
+    private int getHeingthRecursivo(Node<T> actual){
         if (actual == null){
             return 0;
         }
@@ -116,7 +114,7 @@ public class IntTree {
         return getWeightRecursivo(root);
     }
 
-    private int getWeightRecursivo(Node<Integer> actual){
+    private int getWeightRecursivo(Node<T> actual){
         if (actual == null){
             return 0;
         }
@@ -126,7 +124,7 @@ public class IntTree {
         int peso = heighLeft + heighRight;
         return peso +1; 
     }
-
+    
     public int getPeso(){
         return weight; 
     }

@@ -1,5 +1,4 @@
 
-import structures.node.Node;
 import structures.trees.IntTree;
 
 public class App {
@@ -28,7 +27,27 @@ public class App {
     private static void rutIntTree(){
             IntTree arbolNumero = new IntTree(); 
             arbolNumero.add(50); 
+            arbolNumero.add(10); 
+            arbolNumero.add(30); 
+            arbolNumero.add(60); 
+            arbolNumero.add(75); 
+            arbolNumero.add(55);
+ 
+            System.out.println("PreOrden: ");
+            arbolNumero.preOrden();
+            System.out.println("\nPosOrden: ");
+            arbolNumero.posOrden();
+            System.out.println("\nIntOrden: ");
+            arbolNumero.inOrden();
+
+            int altura = arbolNumero.getHeingth();
+            System.out.println("\nAltura: " + altura + "\n");
+
+            int peso = arbolNumero.getWeight();
+            System.out.println("Peso: " + peso + "\n");
     }
+
+    
 
 
 }
