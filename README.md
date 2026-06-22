@@ -4,21 +4,30 @@
 ## Datos del Estudiante
 - **Nombre:** Edwin Patricio Pintado Reinoso
 - **Curso:** Grupo 1
-- **Fecha:** 16/06/2026
 
 ---
 
-## 1. Implementacion de Estructuras Dinamicas Lineales
+## 1. Creacion arboles y insertar datos
 
 **Fecha:** 16/06/2026
 
-**Descripción:** En estas practicas se desarrollo la creacion de clases y metodos como addRecursivo para la creacion de arboles, haciendo que los valores menores se incerten a la izquierda y los mayores a la derecha. 
+**Descripción:** En estas practicas se desarrollo la creacion de clases necesarias para la creacion y buen funcionamiento de arboles, como: 
+
+- Clase Persona: Es el objeto que puede ir dentro de los nodos, aunque por la naturaleza de la clase node puede teener tanto datos primitivos, como objetos.
+- Clase Node: Son los contenedores que contienen los datos y se conectan para formar los arboles.
+- AddRecursivo: Para la creacion de arboles, haciendo que los valores menores se inserten a la izquierda y los mayores a la derecha. 
 
 ---
-
-**Fecha:** 16/06/2026
 
 Imagenes IntTree:
+
+- Persona:
+
+![alt text](assets/image0.1.png)
+
+- Node:
+
+![alt text](assets/image0.png)
 
 - Metodo
 
@@ -31,11 +40,14 @@ Imagenes IntTree:
 - Ejecución 
 
 ![alt text](assets/image3.png)
+
 ---
+
+## 2. Recorridos y calculo de altura y peso
 
 **Fecha:** 19/06/2026
 
-Ejercicio2: Creacion de metodos para mostrar el arbol de diferentes formas, y calcular su peso y artura
+Ejercicio2: Creacion de metodos para mostrar en consola los datos del arbol de diferentes formas, y calcular su peso y artura.
 
 - inOrden: "IZQUIERDA - RAIZ - DERECHA"
 - posOrden: "IZQUIERDA - DERECHA - RAIZ"
@@ -80,3 +92,5 @@ Ejercicio2: Creacion de metodos para mostrar el arbol de diferentes formas, y ca
 - Ejecucion 
 
 ![alt text](assets/image10.png)
+
+![alt text](assets/image11.png)
