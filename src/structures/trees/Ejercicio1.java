@@ -38,4 +38,5 @@ public class Ejercicio1 {
 
         printTreeRecursivo(actual.getLeft(),nivel +1); 
     }
+
 }

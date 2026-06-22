@@ -13,7 +13,6 @@ public class IntTree {
         this.weight = 0;  
     }
 
-
     public Node<Integer> getRoot() {
         return root;
     }
