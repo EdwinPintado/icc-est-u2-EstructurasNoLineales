@@ -7,9 +7,9 @@ public class BinaryTree<T extends Comparable <T>> {
     private int weight; 
 
     // CONSTRUCTOR
-    public BinaryTree(Node<T> root, int peso) {
-        this.root = root;
-        this.weight = peso;
+    public BinaryTree() {
+        this.root = null;
+        this.weight = 0;
     }
 
     public Node<T> getRoot() {
