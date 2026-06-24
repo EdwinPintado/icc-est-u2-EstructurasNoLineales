@@ -1,7 +1,6 @@
 package structures.node;
 
 public class Node<T> {
-
     private T value ; 
     private Node<T> left; 
     private Node<T> rigth; 
@@ -42,7 +41,7 @@ public class Node<T> {
 
     @Override
     public String toString() {
-        return "Node [" + value + "]";
+        return "" + value + "";
     }
 
 }

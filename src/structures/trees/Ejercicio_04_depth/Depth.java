@@ -1,9 +1,9 @@
-package structures.trees;
+package structures.trees.Ejercicio_04_depth;
 
 import structures.node.Node;
+import structures.trees.BinaryTree;
 
-public class Ejercicio1 {
-
+public class Depth {
     public void insert (int[] numeros ){
 
         //CREAR EL ARBOL DE ENTEROS
@@ -15,12 +15,26 @@ public class Ejercicio1 {
         }
 
         //IMPRIMIR EL ARBOL
-        tree.inOrden();
         printTree(tree.getRoot());
+        System.out.println();
+        System.out.println("Profundidad maxima: " + getHeingthRecursivo(tree.getRoot()));
     }
 
+    private int getHeingthRecursivo(Node<Integer> actual){
+        if (actual == null){
+            return 0;
+        }
+        int heighLeft = getHeingthRecursivo(actual.getLeft());
+        int heighRight = getHeingthRecursivo(actual.getRigth());
+
+        int profundidad = Math.max(heighLeft, heighRight);
+        return profundidad + 1; 
+    }
+
+    // Mostrar arbol
+
     public void printTree(Node<Integer> root){
-        System.out.println("Imprimiendo el arbol");
+        System.out.println("\nImprimiendo el arbol\n");
         printTreeRecursivo(root, 0);
     }
 
