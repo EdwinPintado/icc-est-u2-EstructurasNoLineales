@@ -4,7 +4,7 @@
 
 - **Nombre:** Edwin Patricio Pintado Reinoso
 - **Curso:** Grupo 1
-- **Fecha:** 16/06/2026
+- **Fecha:** 24/06/2026
 
 ---
 
