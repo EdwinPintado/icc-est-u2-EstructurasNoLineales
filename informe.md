@@ -151,7 +151,7 @@
 
 ## **Explicacion del ejercicio 04:**
 
-- Lo que hace este algoritmo es medir la altura o profundidad maxima con la que cuente un arbol, contando desde la raiz hasta la rama mas larga o con mas elementos,  es decir que cuenta cuantos nodos existen en el camino mas largo. 
+- Lo que hace este algoritmo es medir la altura o profundidad maxima con la que cuente un arbol, contando desde la raiz hasta la rama mas larga o con mas elementos, es decir que cuenta cuantos nodos existen en el camino mas largo. 
 
 ### **Método maxDepth:**
 
@@ -173,11 +173,11 @@
 - El `if (actual == null){` es caso base y el encargado de detener el metodo en cierto punto.
 
 - Lo que hace `int heighLeft = maxDepth(actual.getLeft());` 
-es que se llama recursivamente y va dejando procesos en pausa hasta que llega al caso base retornando 0 y `int heighRight = maxDepth(actual.getRigth());` hace lo mismo pero del otro lado. En cierto punto un nodo, el mas profundo tendra sus dos lados como nulo es decir 0 por isquierda y derecha, aqui se pasa a la siguiente parte.
+es que se llama recursivamente y va dejando procesos en pausa hasta que llega al caso base retornando 0 y `int heighRight = maxDepth(actual.getRigth());` hace lo mismo pero del otro lado. En cierto punto un nodo, el mas profundo tendra sus dos lados como nulo es decir 0 por izquierda y derecha, aqui se pasa a la siguiente parte.
 
 - Las siguiente linea `int profundidad = Math.max(heighLeft, heighRight);` lo que hacen es comparar, aqui se toma este valor retornado del nodo derecho y nodo izquierdo, extrallendo el valor mayor y guardandolo con el nombre de profundidad.
 
-- Cuando llega el nodo mas profundo va a retornar o por derecha y 0 por izquierda (0 y 0), se elige cualquiera 0.
+- Cuando llega el nodo mas profundo va a retornar 0 por derecha y 0 por izquierda (0 y 0), se elige cualquier 0.
 
 -  Por ultimo en esta linea `return profundidad + 1;` lo que hace es que por cada nivel recorrido se valla sumando uno a la profundidad, no toma en cuenta las llamadas recursivas, sino el nivel.
 cuando llega el nodo mas profundo su profundidad es 0, pero como ese es un nivel se le suma 1, asiendo que ese nivel tenga 1 de profundidad.
@@ -347,6 +347,14 @@ Imprimiendo el arbol
 5
 
 ```
+
+### **Observaciones:**
+
+- El codigo funciona de manera correcta, insertando los numeros enteros de la lista en el árbol binario, creando nuevos nodos y colocando los valores menores ya sea hacia abajo o arriba segun correspondan. 
+
+- los datos menores se encuentran hacia abajo y los mayores hacia arriba. 
+
+---
 
 ## **Ejercicio 2: Invertir árbol binario**
 
@@ -534,6 +542,13 @@ Arbol Invertido:
 
 ```
 
+### **Observaciones:**
+
+- Este codigo parte del algoritmo anterior, usandolo como base para plantear el siguiente problema, pues se puede decir que le da la vuelta al arbol original, cambiando la direccion de sus ramas, pues en esté solo creo un metodo para invertir el arbol, mas no otro metodo de mostrar. 
+
+- La razon por la que tuve que colocar `invertBinaryTree(root);` antes de llamar a mi metodo de impresion es para que este algoritmo voltee el arbol, y poder usar el mismo metodo de imprecion para los dos casos, ya sea el original como el invertido.
+
+--- 
 
 ## **Ejercicio 3: Listar niveles**
 
@@ -683,6 +698,14 @@ Nivel 4: 9
 Nivel 5: 10
 
 ```
+
+### **Observaciones:**
+
+- Este es el método mas extenso y de mayor dificultad, ya que se usan Listas que guardan Listas con los valores de los nodos y mediante diferentes validaciones guardan los datos de cada nivel en una lista para despues mostrarlos en el app.
+
+- Aqui tomamos como punto de partida la raiz y la colocamos en la "fila/cola" para evaluarla ya que esta se encuentra sola en un "nivel", al terminar el proceso llama a sus nodos hijos, tanto derechos como izquierdos y el proceso se repite pero tomando a estos nodos hijos, como dos datos dentro del mismo nivel y asi de manera recursiva hasta llegar al caso base, cuando llegamos aqui nos el metodo nos retorna la lista que contiene la lista con los datos de cada nivel. 
+
+---
 
 ### **Ejercicio 4: Profundidad maxima**
 
@@ -840,3 +863,24 @@ Imprimiendo el arbol
 Profundidad maxima: 6
 
 ```
+
+### **Observaciones:**
+
+- Este algoritmo es el que mejor explica las acciones recursivas, pues en este aunque le mandemos primero la raiz, su proceso llegara solo hasta cierto punto antes de pausarse y dar paso al mismo metodo, pero evaluado con sus nodos hijos.
+
+- Este proceso recursivo se ejecutara hasta llegar al caso base, que es cuando un nodo sea nulo, esto hara que el método deje de ejecutarse de manera recursiva y valla continuando los procesos en pausa desde el final al inicio. 
+
+---
+
+### **Concluciones:**
+
+- Al realizar ejercicios de este tipo con regularidad se fomenta y mejora la logica de programacion, a su vez que te familiarizas con el fucionamiento del código.
+- La mayoria de los métodos que involucren árboles no reciben nodos hijos, sino la misma raiz del arbol, y mediante diferentes procesos, en su mayoria recursivos es cuando se puede acceder a ellos. 
+- El uso de casos base en metodos recursivos que detengan en cierto punto su ejecución, es vital para evitar que estos se conviertan en un bucle infinito y que salten errores de ejecucuión.
+
+---
+
+### **Recomendaciones:**
+
+- Mi mayor recomendación para este y cualquier ejercicio de programción es ejecutar el codigo en diferentes casos, pues esto ayuda a evitar errores en casos especificos, y tener un codigo util en multiples escenarios. 
+- De ser posible siempre organizar bien tu proyecto desde el inicio, no solo en codigo, sino tambien en estructura, ya que esto permite mejor acceso a tus clases y metodos, y es mas comodo de trabajar, a que si tuvieras todo junto. 
