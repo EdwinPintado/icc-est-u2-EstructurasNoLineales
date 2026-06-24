@@ -15,8 +15,7 @@ public class InsertBSTTest {
             tree.add(numero);
         }
 
-        //IMPRIMIR EL ARBOL (PRUEBA)
-        // tree.inOrden();
+        //IMPRIMIR EL ARBOL 
         printTree(tree.getRoot());
         return tree.getRoot();
     }
