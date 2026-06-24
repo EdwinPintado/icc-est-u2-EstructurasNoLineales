@@ -4,7 +4,7 @@ import structures.node.Node;
 import structures.trees.BinaryTree;
 
 public class Depth {
-    public void insert (int[] numeros ){
+    public Node insert (int[] numeros ){
 
         //CREAR EL ARBOL DE ENTEROS
         BinaryTree<Integer> tree = new BinaryTree<>();
@@ -17,15 +17,16 @@ public class Depth {
         //IMPRIMIR EL ARBOL
         printTree(tree.getRoot());
         System.out.println();
-        System.out.println("Profundidad maxima: " + getHeingthRecursivo(tree.getRoot()));
+        System.out.println("Profundidad maxima: " + maxDepth(tree.getRoot()));
+        return tree.getRoot();
     }
 
-    private int getHeingthRecursivo(Node<Integer> actual){
+    private int maxDepth(Node actual){
         if (actual == null){
             return 0;
         }
-        int heighLeft = getHeingthRecursivo(actual.getLeft());
-        int heighRight = getHeingthRecursivo(actual.getRigth());
+        int heighLeft = maxDepth(actual.getLeft());
+        int heighRight = maxDepth(actual.getRigth());
 
         int profundidad = Math.max(heighLeft, heighRight);
         return profundidad + 1; 
@@ -33,12 +34,12 @@ public class Depth {
 
     // Mostrar arbol
 
-    public void printTree(Node<Integer> root){
+    public void printTree(Node root){
         System.out.println("\nImprimiendo el arbol\n");
         printTreeRecursivo(root, 0);
     }
 
-    private void printTreeRecursivo(Node<Integer> actual, int nivel ){
+    private void printTreeRecursivo(Node actual, int nivel ){
         if(actual == null ){
             return; 
         }

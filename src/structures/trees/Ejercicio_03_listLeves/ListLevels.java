@@ -10,7 +10,7 @@ import structures.trees.BinaryTree;
 
 public class ListLevels {
     
-    public void insert (int[] numeros ){
+    public Node insert (int[] numeros ){
 
         //CREAR EL ARBOL DE ENTEROS
         BinaryTree<Integer> tree = new BinaryTree<>();
@@ -22,11 +22,12 @@ public class ListLevels {
 
         //IMPRIMIR EL ARBOL
         printTree(listaLevels(tree.getRoot()));
+        return tree.getRoot();
     }
 
-    public void printTree(List<List<Node<Integer>>> print){
+    public void printTree(List<List<Node>> print){
         int level = 0; 
-        for(List<Node<Integer>> nivel : print){
+        for(List<Node> nivel : print){
             System.out.print("Nivel " + level + ": ");
             for(int i = 0; i<nivel.size(); i++){
                 if(i == nivel.size()-1 || nivel.size()== 1 ){
@@ -39,21 +40,21 @@ public class ListLevels {
         }
     }
 
-    public List<List<Node<Integer>>> listaLevels(Node<Integer> actual){
-        List<List<Node<Integer>>> resultado = new ArrayList<>();
+    public List<List<Node>> listaLevels(Node actual){
+        List<List<Node>> resultado = new ArrayList<>();
         if(actual == null ){
             return resultado; 
         }
 
-        Queue<Node<Integer>> colaLevel = new LinkedList<>();
+        Queue<Node> colaLevel = new LinkedList<>();
         colaLevel.add(actual);
 
         while(!colaLevel.isEmpty()){
             int cant = colaLevel.size(); 
-            List<Node<Integer>> nivel = new ArrayList<>();
+            List<Node> nivel = new ArrayList<>();
 
             for(int i = 0; i< cant; i++ ){
-                Node<Integer> nodoActual = colaLevel.remove();
+                Node nodoActual = colaLevel.remove();
                 nivel.add(nodoActual);
 
                 if(nodoActual.getLeft() != null)

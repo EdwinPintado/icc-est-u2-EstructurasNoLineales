@@ -5,7 +5,7 @@ import structures.trees.BinaryTree;
 
 public class InvertBinaryTree {
 
-    public void insert (int[] numeros ){
+    public Node insert (int[] numeros ){
 
         //CREAR EL ARBOL DE ENTEROS
         BinaryTree<Integer> tree = new BinaryTree<>();
@@ -17,18 +17,20 @@ public class InvertBinaryTree {
 
         //IMPRIMIR EL ARBOL (PRUEBA)
         invertTree(tree.getRoot());
+        return tree.getRoot();
     }
 
-    public void invertTree(Node<Integer> root){
+    public Node invertTree(Node root){
         System.out.println("\nArbol Original: \n");
         printTreeRecursivo(root, 0);
 
         invertBinaryTree(root); 
         System.out.println("\nArbol Invertido: \n");
         printTreeRecursivo(root, 0);
+        return root; 
     }
 
-    private void printTreeRecursivo(Node<Integer> actual, int nivel ){
+    private void printTreeRecursivo(Node actual, int nivel ){
         if(actual == null ){
             return; 
         }
@@ -43,12 +45,12 @@ public class InvertBinaryTree {
         printTreeRecursivo(actual.getLeft(),nivel +1); 
     }
 
-    public Node<Integer> invertBinaryTree (Node<Integer> actual){
+    public Node invertBinaryTree (Node actual){
         if(actual == null ){
             return null; 
         }
 
-        Node<Integer> aux = actual.getLeft();
+        Node aux = actual.getLeft();
         actual.setLeft(actual.getRigth());
         actual.setRigth(aux);
 
